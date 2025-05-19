@@ -22,4 +22,9 @@ console.log(Number(nullNum));
 console.log(Number(undefinedNum));
 console.log(Number(strNum));
 
+// Primitive and Non Primitive Data Types
+
+// Primitive Data Types => store the Single Value e.g => String, Number, Boolean, BigInt, Symbol, Null, Undefined
+// Non Primitive Data Types => Store the Multipe Value => Array, Object, Function
+
 
