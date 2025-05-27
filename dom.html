@@ -8,11 +8,11 @@
 </head>
 
 <body>
-    <form>
-        <input type="text" id="emp_id" name="FullName" onkeydown="empIdValue()" placeholder="Enter your EmployeeID" /><br>
+    <div>
+        <input type="text" id="emp_id" name="FullName" onkeyup="empIdValue()" placeholder="Enter your EmployeeID" /><br>
         <input type="password" id="emp_pass" name="Email" placeholder="Enter your Password" /><br>
-        <button type="submit">Login</button><br>
-    </form>
+        <button type="submit" onclick="printWelcome()">Login</button><br>
+    </div>
     <p id="userId_val"></p>
     <ul id="project_list">
         <li>DataMigration CM1</li>
@@ -28,32 +28,33 @@
         // })
 
         let empIdEnterValue;
-        let printUsername=document.querySelector("#userId_val");
-
+        let printUsername = document.querySelector("#userId_val");
 
         let empIdValue = () => {
             let empId = document.querySelector("#emp_id");
             empIdEnterValue = empId.value;
             console.log(empIdEnterValue);
-            
+
         }
 
-        fetch('user.json')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach((item)=>{
-                    console.log(item);
-                    
-                    if(empIdEnterValue==item.employeeno){
-                        printUsername.textContent=item.name;
-                        printUsername.style.color="red";
-                    }
+        function printWelcome() {
+            fetch('user.json')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach((item) => {
+                        console.log(empIdEnterValue);
 
-                })
-                
+                        if (empIdEnterValue == item.employeeno) {
+                            printUsername.textContent = item.name;
+                            printUsername.style.color = "red";
+                        }
 
-                // Note: You can't save it back unless you send it to a backend via API.
-            });
+                    })
+
+                    // Note: You can't save it back unless you send it to a backend via API.
+                });
+        }
+
     </script>
 </body>
 
