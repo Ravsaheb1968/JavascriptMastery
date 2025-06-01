@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hello Ok652</h1>
+    <button id="btn">Click Me</button>
+    <div id="images">
+        <li>
+            <img id="img1" src="style.png" />
+        </li>
+        <li>
+            <img id="img2" src="atrribute.png" />
+        </li>
+    </div>
+    <script>
+        //first approach use of events
+        // function clickMe(){
+        //     alert("Event use of first old approch");
+        // }
+
+        // second approach use of events
+        // document.querySelector("#btn").onclick=(function (){
+        //     alert("it is second approach of events use");
+        // })
+
+        // Third approach  use of events give priority to use of it
+
+        // false is default here to use.
+        // e is the event object here
+        // document.querySelector("#btn").addEventListener("click", function (e) {
+        //     // alert("Best approach ever use of Event");
+        //     console.log(e);
+        // }, false)
+
+        // Event Propagation is divide
+        // first is capturing n 2nd is bubbling
+
+        // when it is true called as capturing its work downward top to bottom
+        // document.querySelector("#images").addEventListener("click",function(){
+        //     console.log("click on images parent element")
+        // },true);
+
+        // document.querySelector("#img1").addEventListener("click",function(){
+        //     console.log("click on images direct");
+        // },true);
+
+        // when it is false called as bubbling its work upward bottom to top
+
+        // if won't to print for the parent then must use of stopPropagtion for it
+        // document.querySelector("#images").addEventListener("click", function (e) {
+        //     console.log("click on images parent element")
+        // }, false);
+
+        // document.querySelector("#img1").addEventListener("click", function (e) {
+        //     console.log("click on images direct");
+        //     e.stopPropagation();
+        // }, false);
+
+        // when u use stopPropagation then it only print the img1 not go for parent one from the child
+
+        // Prevent Default
+        // cancel the event if it is canceable
+        /*Understanding e.preventDefault():
+        e.preventDefault() is used to prevent the default action of an event — for example:
+
+        Preventing a form from submitting.
+
+        Preventing a link (<a href="...") from navigating.
+
+        It does not prevent the code inside your event handler from running — it only prevents the default behavior of the element.
+         */
+        // document.querySelector("#btn").addEventListener("click", function (e) {
+        //     alert("Best approach ever use of Event");
+        //     console.log(e);
+        //     e.preventDefault();
+        // }, false)
+
+        
+        // how to add an event on particular target 
+        document.querySelector("#images").addEventListener("click", function (e) {
+            if (e.target.tagName === "IMG") {
+                let removeIt = e.target.parentNode;
+                removeIt.remove();
+            }
+        })
+    </script>
+</body>
+
+</html>
