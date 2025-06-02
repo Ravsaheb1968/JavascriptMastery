@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="heading">Start Printing</h1>
+    <button id="btn_start">Start</button>
+    <button id="btn_stop">Stop</button>
+
+    <script>
+        let start = document.querySelector("#btn_start");
+        let stop = document.querySelector("#btn_stop");
+
+        let start_fun = function () {
+            console.log("StartPrinting");
+        }
+
+        let startInterval;
+        start.addEventListener("click", function () {
+            startInterval = setInterval(start_fun,100);
+            console.log(startInterval);
+        }, false);
+
+        stop.addEventListener("click", function () {
+            clearInterval(startInterval);
+        }, false);
+    </script>
+</body>
+
+</html>
