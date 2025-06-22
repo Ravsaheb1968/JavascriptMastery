@@ -12,7 +12,7 @@ let secondPromise = new Promise(function (resolve, reject) {
 })
 
 // it used to show the promise in the pending state.
-console.log(secondPromise);
+console.log(secondPromise);   
 
 // How to resolve the promise 
 
