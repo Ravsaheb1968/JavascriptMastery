@@ -389,4 +389,49 @@ mycoding.forEach((item)=>{
     console.log(item.mylang);
 })
 
-// forEach loop not use with objects
+// IMP -- forEach loop not use with objects
+
+// Filter Map Reduce
+
+// Filter 
+// Filter is used to segregate the output and take the ouput from the particular condition. 
+// it goes through all present element in given array, segregate element that suitable for the given condition.
+
+const arrr=[2,4,24,425,224,22];
+
+// if u used curly braces return are must
+let myresult = arrr.filter((item)=>{
+    return item>200;
+})
+
+console.log(myresult);
+
+let resultFilter = arrr.filter((item)=> item<300)
+console.log(resultFilter);
+
+// Map is used to work on the all present element in the given array.
+// Any condition u state that apply on the all element.
+let myMap = arrr.map((item)=>item>34);
+console.log(myMap);
+
+let myMapResult = arrr.map((item)=>item+100);
+console.log(myMapResult);
+
+// Map and Filter Same time use
+
+let mapFilter = arrr.map((item)=>(item*10)).map((item)=>item+100).filter((item)=>item>1000);
+console.log(mapFilter);
+
+// Reduce In JavaScript, the .reduce() method is used to reduce an array to a single value by applying a function to each element (from left to right). 
+// It’s very useful for things like summing numbers, flattening arrays, grouping items, etc.
+
+let reduceResult = arrr.reduce((acc,currval)=>acc+currval,0);
+console.log(`The Reduce Sum are : ${reduceResult}`);
+
+// if u used curly braces return are must
+
+let reduceRes = arrr.reduce((acc,currVal)=>{
+    return acc*10 + currVal;
+})
+
+console.log(`The Updated Value of the Reduce Expression are : ${reduceRes}`);
