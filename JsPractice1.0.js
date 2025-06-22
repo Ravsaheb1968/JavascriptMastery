@@ -435,3 +435,42 @@ let reduceRes = arrr.reduce((acc,currVal)=>{
 })
 
 console.log(`The Updated Value of the Reduce Expression are : ${reduceRes}`);
+
+// Sync
+// In the sync, source code execute line by line there is no any timestamp to break source code wait for the excute 
+console.log("Power On");
+console.log("Start");
+console.log("End");
+console.log("shutdown");
+
+//Async 
+console.log("start")
+
+// In the Async js engine doesn't wait for the one second to execute the next statement, that statement goes into queue after it's time over print
+setTimeout(()=>{
+    console.log("Hi");
+},1000);
+
+console.log("End");
+
+setTimeout(function (){
+    console.log("Hii");
+},2000);
+
+//use of setTimeout assign the function to the varible that function reference use in setTimout
+
+let setTime = function (){
+    console.log("Print the value after within second");
+}
+
+setTimeout(setTime,1000);
+
+// clearTimeout
+
+let setClear = function(){
+    console.log("First set then Clear");
+}
+
+let set = setTimeout(setClear,2000);
+
+clearTimeout(set); // it stop the printing i.e happing after the two second i.e "First set then Clear";
